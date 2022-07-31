@@ -31,6 +31,7 @@ const user = require("../user");
     timeout: 0,
   });
   await expect(page.locator("text=Мои курсы и профессии")).toBeVisible();
+  await page.screenshot({ path: "screenshot1.png" });
   await context.close();
   await browser.close();
 })();
@@ -64,6 +65,7 @@ const user = require("../user");
   await expect(
     page.locator("text=Вы ввели неправильно логин или пароль")
   ).toBeVisible();
+  await page.screenshot({ path: "screenshot2.png" });
   await context.close();
   await browser.close();
 })();
